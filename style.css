@@ -1,0 +1,127 @@
+/* Universal Styles */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+body{
+    overflow-x: hidden;
+    background-color: #222;
+}
+
+/* Custom Color Variables */
+:root {
+    --gopu-accent: #007ced;
+    --gopu-dark: #222;
+    --gopu-light: #e5e5e5;
+}
+
+/* Custom Classes for Your Theme */
+.gopu-bg-dark {
+    background-color: var(--gopu-dark) !important;
+}
+
+.gopu-text-accent {
+    color: var(--gopu-accent) !important;
+}
+
+.gopu-text-light {
+    color: var(--gopu-light) !important;
+}
+
+/* Navbar Link Color */
+.gopu-nav-link {
+    color: var(--gopu-light) !important;
+    margin-right: 2.5rem;
+}
+.gopu-nav-link:hover,
+.gopu-nav-link.active {
+    color: var(--gopu-accent) !important;
+}
+
+/* Custom Buttons */
+.gopu-btn-outline {
+    background-color: transparent !important;
+    color: var(--gopu-light) !important;
+    border: 2px solid var(--gopu-light) !important;
+    padding: 12px 25px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+.gopu-btn-outline:hover {
+    background-color: var(--gopu-accent) !important;
+    border-color: var(--gopu-accent) !important;
+    color: #fff !important;
+}
+
+.gopu-btn-solid {
+    background-color: var(--gopu-accent) !important;
+    color: #fff !important;
+    border: 2px solid var(--gopu-accent) !important;
+    padding: 12px 25px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+.gopu-btn-solid:hover {
+    background-color: #0060b9 !important; /* Slightly darker #007ced */
+    border-color: #0060b9 !important;
+}
+
+/* Custom Button Shadow */
+.btn-group .btn {
+    box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.78);
+    margin: 5px 7px 5px 0px;
+}
+
+/* Social Icons */
+.gopu-icon-color {
+    color: var(--gopu-light) !important;
+    margin-right: 10px;
+    transition: 0.5s;
+}
+.gopu-icon-color:hover {
+    color: var(--gopu-accent) !important;
+    transform: rotate(360deg);
+}
+
+/* Hero Header Section */
+.hero-header{
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Text */
+.logo-text{
+    font-weight: 500;
+    color: var(--gopu-light);
+}
+
+/* Hero Picture Styling - CRITICAL CHANGE HERE */
+.hero-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* This makes the div itself a circle */
+    overflow: hidden; /* This crops the image to the circle */
+    border: 15px solid #444; /* Your original border color and thickness */
+    box-shadow: 5px 7px 25px rgba(0,0,0,0.5); /* Your original box shadow */
+}
+
+.hero-pic img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.hero-pic img:hover {
+    transform: scale(1.2);
+}
+
+/* Ensure navbar-toggler icon color matches theme (accent blue) */
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23007ced' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
