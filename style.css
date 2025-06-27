@@ -1,14 +1,17 @@
 /* Universal Styles */
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
 }
-body{
+body {
     overflow-x: hidden;
     background-color: #222;
+    /* Added padding-top to prevent content from being hidden behind the fixed navbar.
+       This value might need slight adjustment based on the navbar's exact height. */
+    padding-top: 56px; /* A common default height for Bootstrap 5 navbars */
 }
 
 /* Custom Color Variables */
@@ -34,7 +37,7 @@ body{
 /* Navbar Link Color */
 .gopu-nav-link {
     color: var(--gopu-light) !important;
-    margin-right: 2.5rem;
+    margin-right: 2.5rem; /* Margin for desktop view */
 }
 .gopu-nav-link:hover,
 .gopu-nav-link.active {
@@ -87,20 +90,20 @@ body{
 }
 
 /* Hero Header Section */
-.hero-header{
-    width:100%;
+.hero-header {
+    width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
 }
 
 /* Logo Text */
-.logo-text{
+.logo-text {
     font-weight: 500;
     color: var(--gopu-light);
 }
 
-/* Hero Picture Styling - CRITICAL CHANGE HERE */
+/* Hero Picture Styling */
 .hero-pic {
     width: 300px;
     height: 300px;
@@ -122,6 +125,37 @@ body{
 }
 
 /* Ensure navbar-toggler icon color matches theme (accent blue) */
+/* This SVG creates the standard Bootstrap hamburger lines with your accent color */
 .navbar-dark .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23007ced' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Responsive Navbar Adjustments */
+@media (max-width: 991.98px) { /* Applies to devices smaller than 'lg' breakpoint (992px) */
+    .navbar-nav {
+        text-align: center; /* Center align nav items when collapsed */
+        padding-bottom: 15px; /* Add some padding at the bottom of the collapsed menu */
+    }
+
+    .gopu-nav-link {
+        margin-right: 0; /* Remove right margin for collapsed items */
+        padding: 10px 0; /* Add vertical padding for better touch targets */
+    }
+
+    /* Adjust padding for the fixed-top navbar on smaller screens to prevent content overlap */
+    body {
+        padding-top: 70px; /* Increased padding to account for navbar height when expanded on mobile */
+    }
+
+    /* Ensure brand text has some padding from the edge when collapsed */
+    .navbar-brand {
+        padding-left: 15px;
+    }
+}
+
+/* Optional: Further refine for very small screens if needed */
+@media (max-width: 575.98px) { /* Applies to devices smaller than 'sm' breakpoint (576px) */
+    .navbar-brand {
+        font-size: 1.2rem; /* Slightly reduce logo text size on very small screens */
+    }
 }
